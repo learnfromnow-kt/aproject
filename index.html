@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="fontawsome/brands.css">
+    <link rel="stylesheet" href="fontawsome/fontawesome.min.css">
+    <link rel="stylesheet" href="fontawsome/solid.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+	<style>
+	body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+html{
+    scroll-behavior: smooth;
+}
+/************************header****************/
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background: #000000;
+    padding: 15px 15px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a{
+    font-size: 30px;
+    text-decoration:none;
+    color: #ffffff;
+    font-weight: 700;
+}
+header .logo a span{
+    color: #c11325;
+}
+header .nav{
+    position: fixed;
+    background-color: #c11325;
+    width: 280px;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index: 99;
+    padding: 100px 0px 15px;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+header .nav.open{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+header .nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+header .nav ul li{
+    display: block;
+}
+header .nav ul li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 400;
+    color: #ffffff;
+    display: block;
+    position: relative;
+    padding: 10px 30px;
+}
+header .nav ul li a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #000000;
+    opacity: .2;
+    -webkit-transition: width .5s ease;
+    transition: width .5s ease;
+    z-index: -1;
+}
+header .nav ul li a:hover::before{
+    width: 100%;
+}
+header .ham-burger{
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+header .ham-burger span{
+    height: 3px;
+    margin-bottom: 8px;
+    display: block;
+    background-color: #ffffff;
+    width: 30px;
+    -webkit-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+header .ham-burger span:nth-child(1){
+    transform-origin: left top; 
+}
+header .ham-burger span:nth-child(2){
+    transform-origin: left bottom; 
+}
+header .ham-burger.active span:nth-child(1){
+    transform: rotate(45deg) translateY(-6px);
+}
+header .ham-burger.active span:nth-child(2){
+    transform: rotate(-45deg) translateY(6px);
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+/******************home*********************/
+
+/************************about****************/
+.about{
+    padding: 80px 15px;
+    background-color: #ffffff;
+}
+.about .content{
+    display: flex;
+}
+.about .container h2{
+    text-align: center;
+    padding: 20px;
+    font-size: 42px;
+}
+.about .content .box{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
+}
+.about .content .box .inner{
+    background-color: #222222;
+}
+.about .content .box:nth-child(2) .inner{
+    background-color: #c11325;
+}
+.about .content .box .inner .img img{
+    width: 100%;
+}
+.about .content .box .inner .text{
+    padding: 30px;
+}
+.about .content .box .inner .text h4{
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0px 0px 15px;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.about .content .box .inner .text p{
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: capitalize;
+}
+/****************services*************/
+.service{
+    padding: 80px 0px;
+    background: #c11325;
+}
+.service .content{
+    display: flex;
+}
+.service .content .box{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 19px;
+    text-align: center;
+}
+.service .content .text h2{
+    font-size: 42px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0px 0px 20px;
+}
+
+.service .content .text form{
+    padding: 20px;
+}
+
+.service .content .text form label{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 40px;
+}
+.service .content .text form select{
+    height: 25px;
+    width: 93px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.service .content .text .btn{
+    padding: 10px 30px;
+    background-color: #222222;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 5px;
+}
+.service .content .text .btn:hover{
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.service .content .text form p{
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0 0 0px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+/**************Contact******************/
+.contact{
+    padding: 80px 0;
+    background-color: #222222;
+}
+.contact .content{
+    display: flex;
+}
+.contact .content .box{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 15px;
+}
+.contact .content .form input,
+.contact .content .form textarea{
+    height: 50px;
+    width: 100%;
+    padding: 6px 12px;
+    margin-bottom: 25px;
+    background-color: transparent;
+    border: 1px solid #c11325;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+.contact .content .form input::placeholder,
+.contact .content .form textarea::placeholder{
+    color: #ffffff;
+}
+.contact .content .form input:focus,
+.contact .content .form textarea:focus{
+    border-color: #c11325;
+    outline: none;
+}
+.contact .content .form textarea{
+    height: 100px;
+}
+.contact .content .form button{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    height: 45px;
+    padding: 0 50px;
+    border: 1px solid transparent;
+    background-color: #c11325;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all .5s ease;
+}
+.contact .content .form button:hover{
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.contact .content .text h2{
+    font-size: 30px;
+    font-weight: 500;
+    color: #c11325;
+    padding: 0px 0px 20px;
+}
+.contact .content .text p{
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px 0px 30px;
+    padding: 0;
+}
+.contact .content .text .info ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact .content .text .info ul li{
+    display: block;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-left: 40px;
+}
+.contact .content .text .info ul li span{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    font-size: 20px;
+    color: #c11325;
+}
+.contact .content .text .social{
+    padding-top: 30px
+}
+.contact .content .text .social a{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #c11325;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 15px;
+    transition: all .5s ease;
+    border: 1px solid transparent;
+}
+.contact .content .text .social a:hover{
+    background-color: transparent;
+    border-color: #ffffff;
+}
+.contact .content .text .social a span{
+    color: #ffffff;
+    font-size: 20px;
+}
+.contact .content .text .copy{
+    border-top: 1px solid #333333;
+    margin-top: 30px;
+    padding-top: 20px;
+    color: #c5c5c5;
+    font-size: 18px;
+
+}
+/******************responsive 991 ****************************/
+@media(max-width: 991px){
+    .home{
+        background-position: center;
+    }
+    .classes .content{
+        flex-wrap: wrap;
+    }
+    .classes .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .classes .content .img{
+        display: none;
+    }
+    .start-today .content .box{
+        padding: 15px
+    }
+}
+h2{ text-decoration:underline;
+color:skyBlue;}
+/******************responsive 767 ****************************/
+@media(max-width: 767px){
+    .home h1{
+        font-size: 40px;
+    }
+    .home h2{
+        font-size: 30px;
+    }
+    .about .content{
+        flex-wrap: wrap;
+    }
+    .about .content .box{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .service .content{
+        flex-wrap: wrap;
+    }
+    .service .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .classes .content .class-items .item{
+        flex-wrap: wrap;
+    }
+    .classes .content .class-items .item .item-text, 
+    .classes .content .class-items .item .item-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .schedule .content {
+        flex-wrap: wrap;
+    }
+    .schedule .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .start-today .content{
+        flex-wrap: wrap;
+    }
+    .start-today .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .gallery .content{
+        flex-wrap: wrap;
+    }
+    .gallery .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .price .content{
+        flex-wrap: wrap;
+    }
+    .price .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .contact .content{
+        flex-wrap: wrap;
+    }
+    .contact .content .box {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/******************responsive 550****************************/
+@media(max-width: 550px){
+    
+}
+</style>
+</head>
+<body>
+    <!----------start header----------->
+    <header>
+        <div class="container">
+
+            <div class="logo">
+                <a href=""> Start <span>Learning</span></a>
+            </div>
+            <a href="javascript:oid(0)" class="ham-burger">
+                <span></span>
+                <span></span>
+            </a>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#service">Exercices</a></li>
+                    <li><a href="#classes">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!----------end header----------->
+    <!----------start about----------->
+    <section class="about"  id="about">
+        <div class="container">
+            <h2 class="til">MULTIPLICATION</h2>
+            <div class="content">
+                <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>I. Sens de la multiplication</h4>
+                            <p>
+                                Faire une multiplication équivaut à ajouter plusieurs fois le même nombre.
+                                Exemple : 23 + 23 + 23 + 23 = 4 x 23 (4 fois  23) = 92
+                                Attention : il faut apprendre et connaître les tables de multiplication pour bien multiplier.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>II. La multiplication</h4>
+                            <p>
+                                On pose la multiplication en respectant les ordres. Les unités sous les unités, les dizaines sous les dizaines, les centaines sous les centaines, etc.
+                                Le nombre placé en haut est multiplié par celui placé dessous.
+              
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>1. La composition de la multiplication</h4>
+                            <p>
+                                On la lit « cinq multiplié par six » ou « cinq fois six ».
+                                Elle signifie qu'on additionne cinq fois le chiffre 6.<br>
+                                5 est le multiplicande et 6 est le multiplicateur.<br>
+                                Le signe × se lit « multiplié par ». C'est le signe de la multiplication.<br><br>
+                                30 est le résultat de la multiplication, on l'appelle le produit.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>2. Quand utilise-t-on la multiplication ?</h4>
+                            <p>
+                                a. Pour additionner plusieurs fois le même nombre:
+                               
+                            </p>
+                            <p>
+                                b. Pour calculer le nombre d'objets appartenant à des ensembles égaux:
+                                On utilise la multiplication lorsqu'on additionne plusieurs fois le même nombre : elle est en effet souvent plus rapide que l'addition. Elle sert aussi à calculer le nombre d'objets appartenant à des ensembles égaux.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about"  id="about">
+        <div class="container">
+            <h2 class="til">SOUSTRACTION</h2>
+            <div class="content">
+                <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="inner">
+                        <div class="text">
+                            <p>
+                            Pour faire une soustraction de deux nombres, il faut écrire ceux-ci de manière que les chiffres soient bien alignés les uns sous les autres. 
+							Le nombre du haut doit être plus grand ou égal à celui du dessous. Si le second nombre est plus grand que le premier, on intervertit les deux nombres avant de faire la soustraction, ensuite on met le signe (-).
+							
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>1. Les soustractions en colonnes</h4>
+                            <p>
+                                La soustraction en colonne est l'une des techniques possibles pour faire une soustraction.<br>
+                                Dans les soustractions en colonnes, il est indispensable de placer les nombres les uns au-dessous des autres, en veillant à mettre les unités sous les unités et les dizaines sous les dizaines.<br>
+                                Ensuite il faut soustraire les unités aux unités en partant de la ligne du haut et les dizaines aux dizaines en partant également de la ligne du haut.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>2. Ne pas oublier les retenues</h4>
+                            <p>
+                                Il y a une autre règle importante à respecter dans une soustraction en colonnes de nombres à deux chiffres :
+                                lorsque le chiffre du nombre du haut est inférieur au chiffre du nombre du bas , on ajoute une dizaine au chiffre du haut dans la colonne des unités et une retenue au chiffre du bas dans la colonne des dizaines .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>A retenir !</h4>
+                            <p>
+             Pour poser correctement une soustraction en colonnes, il faut placer les nombres les uns au-dessous des autres en veillant à mettre les unités sous les unités et les dizaines sous les dizaines. Dans la soustraction en colonnes de nombres à deux chiffres, lorsqu’on doit ajouter une retenue dans la colonne des unités, on n’oublie pas de la reporter au chiffre du bas dans la colonne des dizaine.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about"  id="about">
+        <div class="container">
+            <h2 class="til">ADDITION</h2>
+            <div class="content">
+                <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>1. Sens de l'addition</h4>
+                            <p>   Comment Additionner ?
+On effectue une addition lorsque l'on ajoute les éléments d'un ensemble afin d'obtenir un total ou une somme.
+ On l'utilise pour trouver le total d'un ajout, d'un gain, d'une augmentation. Additionner signifie : ajouter en comptant. 
+ Le signe de l'addition est conventionnellement le symbole ' + ' Dans une addition, les nombres que l'on ajoute sont les termes et le résultat est la somme.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4> 2. L'addition avec retenue posée en ligne</h4>
+                            <p> Dans une opération, on appelle "retenue" le chiffre reporté pour être ajouté au rang supérieur.
+							Pour effectuer une addition avec retenue, il faut séparer les dizaines et les unités.
+                            On commence par additionner les unités entre elles.
+                            Si la somme des unités est supérieure à 10, on « retient » le chiffre des dizaines et on l'ajoute au total des dizaines.
+							On applique la même méthode pour les rangs supérieurs.
+							
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="box wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>3. L'addition avec retenue posée en colonne</h4>
+                            <p>
+                                Pour poser une addition en colonne, on écrit les dizaines sous les dizaines et les unités sous les unités, puis on additionne les chiffres de chaque colonne.<br>
+								Lorsque le résultat obtenu dans un rang est supérieur à 10, il faut alors ajouter une retenue au rang supérieur.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box wow bounceInUp" data-wow-delay="0.4s">
+                    <div class="inner">
+                        <div class="text">
+                            <h4>A retenir !</h4>
+                            <p>
+                       Pour calculer la somme de 2 nombres, on peut :<br>
+• soit effectuer une addition en ligne ;<br>
+• soit poser une addition en colonne.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------start services----------->
+
+    <section id="service" class="service">
+        <div class="container">
+            <div class="content">
+                <div class="text box wow slideInLeft">
+                    <h2>TESTEZ VOS CONNAISSANCES</h2>
+                    <form name="FF">
+
+                        <label for="">530 + 278 =</label>   <select name='a'><option>1000</option><option>830</option><option>808</option><option>794</option></select><br><br><p id='a'></p>
+                        
+                        <label for="">261 + 734 = </label>  <select name='b'> <option>1000</option><option>300</option><option>995</option><option>1297</option></select><br><br><p id='b'></p>
+                        
+                        <label for="">124 + 388 = </label>   <select name='c'><option>1000</option><option>512</option><option>1637</option><option>1320</option></select><br><br><p id='c'></p>
+                        
+                        <label for="">294 + 210 = </label>   <select name='d'><option>1000</option><option>504</option><option>291</option><option>6805</option></select><br><br><p id='d'></p>
+                        
+                        <label for="">239 + 180 = </label>   <select name='e'><option>1000</option><option>419</option><option>500</option>291</option></select><br><br><p id='e'></p>
+                        <input class="btn" type="button"  value="Correction"   onClick="corrige()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!----------end services----------->
+    <!----------start contact---------------->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="content">
+                <div class="box form wow slideInLeft">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea placeholder="Message..."></textarea>
+                    <button type="submit">Send Message</button>
+                </div>
+                <div class="box text wow slideInRight">
+                    <h2>Get Connected With Us</h2>
+                    
+                    <div class="info">
+                      <ul>
+                            <li><span class="fas fa-envelope"></span>khawla.bratz@gmail.com</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="copy">
+                        Powered By &copy; the TISS KHAWLA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!----------end contact---------------->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+	$(document).ready(function(){
+    $(".ham-burger").click(function(){
+        $(".nav").toggleClass("open");
+        $(this).toggleClass("active");
+    });
+    $(".accordian-container").click(function(){
+        $(".accordian-container").children(".body").slideUp();
+        $(".accordian-container").removeClass("active");
+        $(".accordian-container").children(".head").children("span").removeClass("fa-angle-double-down").addClass("fa-angle-double-up");
+        $(this).children(".body").slideDown();
+        $(this).addClass("active");
+        $(this).children(".head").children("span").removeClass("fa-angle-double-up").addClass("fa-angle-double-down");
+    });
+    $(".nav ul li a").click(function(event){
+        if(this.hash!=="")
+        {
+            event.preventDefaulte();
+            var hash=this.hash;
+            $('html,body').animate({
+                scrollTop:$(hash).offset().top},800,function(){
+                    window.location.hash=hash;
+            });
+        }
+    }) 
+
+});
+function corrige(){
+    var a=parseInt(document.forms['FF'].elements['a'].value);
+    var b=parseInt(document.forms['FF'].elements['b'].value);
+    var c=parseInt(document.forms['FF'].elements['c'].value);
+    var d=parseInt(document.forms['FF'].elements['d'].value);
+    var e=parseInt(document.forms['FF'].elements['e'].value);
+     
+    if(a==808) {document.getElementById('a').innerHTML=("Juste");}
+    if(b==995) {document.getElementById('b').innerHTML=("Juste");}
+    if(c==512) {document.getElementById('c').innerHTML=("Juste");}
+    if(d==504) {document.getElementById('d').innerHTML=("Juste");}
+    if(e==419) {document.getElementById('e').innerHTML=("Juste");}
+    
+    if(a!=808) {document.getElementById('a').innerHTML=("Fausse."  + ' ' +  "La bonne réponse est : 808" );}
+    if(b!=995) {document.getElementById('b').innerHTML=("Fausse."  + ' ' +  "La bonne réponse est : 995" );}
+    if(c!=512) {document.getElementById('c').innerHTML=("Fausse."  + ' ' +  "La bonne réponse est : 512" );}
+    if(d!=504) {document.getElementById('d').innerHTML=("Fausse."  + ' ' +  "La bonne réponse est : 504" );}
+    if(e!=504) {document.getElementById('e').innerHTML=("Fausse."  + ' ' +  "La bonne réponse est : 504" );} 
+    }
+
+wow = new WOW(
+    {
+      animateClass: 'animated',
+      offset:       0,
+      
+    }
+  );
+  wow.init();
+	
+	
+	
+	
+	
+	</script>
+    
+
+</script>
+    
+</body></html>
